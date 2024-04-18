@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Sections HTML Page</title>
+    <!-- <link rel="stylesheet" href="crud_demo.css"> -->
+    <link rel="stylesheet" th:href="@{/css/crud_demo.css}"/>
+</head>
+<body>
+    <!-- First section -->
+    <div class="section">
+        <div class="section-title">Create</div>
+        <input type="text" id="createInput1" placeholder="Field 1">
+        <input type="text" id="createInput2" placeholder="Field 2">
+        <input type="text" id="createInput3" placeholder="Field 3">
+        <button onclick="create()">Create</button>
+        <button onclick="clearCreate()">Clear</button>
+        <div class="response" id="createResponse"></div>
+    </div>
+
+    <!-- Second section -->
+    <div class="section">
+        <div class="section-title">Update</div>
+        <input type="text" id="updateInput1" placeholder="Field 1">
+        <input type="text" id="updateInput2" placeholder="Field 2">
+        <input type="text" id="updateInput3" placeholder="Field 3">
+        <input type="text" id="updateInput4" placeholder="Field 3">
+        <button onclick="update()">Update</button>
+        <button onclick="clearUpdate()">Clear</button>
+        <div class="response" id="updateResponse"></div>
+    </div>
+
+    <!-- Third section -->
+    <div class="section">
+        <div class="section-title">Search by ID</div>
+        <input type="text" id="searchInput" placeholder="Search">
+        <button onclick="search()">Search</button>
+        <button onclick="searchForUpdate()">Search For Update</button>
+
+        <!-- Results -->
+        <div class="response" id="searchResponse"></div>
+    </div>
+
+    <!-- Fourth section -->
+    <div class="section">
+        <div class="section-title">Delete</div>
+        <input type="text" id="deleteInput" placeholder="Search">
+        <button onclick="deleteStudent()">Delete</button>
+
+        <!-- Results -->
+        <div class="response" id="deleteResponse"></div>
+    </div>
+
+    <!-- Fifth section -->
+    <div class="section">
+        <div class="section-title">Reset Table</div>
+        <button onclick="resetTable()">Reset</button>
+        <!-- Results -->
+        <div class="response" id="resetResponse"></div>
+    </div>
+
+    <!-- Last section -->
+    <div class="section">
+        <div class="section-title">Check Table</div>
+        <button onclick="getEverythingAsTable()">Show Table Contents</button>
+        <div style="margin-top: 20px;" id="studentList"></div>
+    </div>
+
+
+</body>
+ <!-- Link external JavaScript file in the footer -->
+ <!-- <script src="crud_demo.js" defer></script> -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery for .ajax calls -->
+ <script type="text/javascript" th:src="@{/js/crud_demo.js}"></script>
+ <script type="text/javascript" th:src="@{/js/crud_demo_simplemethods.js}"></script>
+</html>
